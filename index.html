@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="このサイトでは knm の作品を見ることができます。">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>knm's page</title>
+
+  <link rel="stylesheet" href="css/style.css"> 
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+
+<body>
+
+  <header>
+    <div class="logoBox">
+      <a class="logo" href="#">SKYBLUE</a>
+    </div>
+    <!------------ pc nav ------------>
+    <nav class="nav-pc">
+      <a class="link" href="#about">ABOUT</a>
+      <a class="link" href="#work">WORK</a>
+      <a class="link" href="#contact">CONTACT</a>
+    </nav>
+  </header>
+  
+  <main>
+    <article>
+
+      <!------------ carousel ------------>
+      <section id="topImg">
+        <div id="carouselSection">
+          <div>
+            <img class="topPic" src="images/mountain2013.jpg" alt="山の風景">
+          </div>
+          <div>
+            <img class="topPic" src="images/mountain.jpg" alt="山の風景">
+          </div>
+        </div>
+        
+      </section>
+      <!------------ about ------------>
+      <section id="about" class="about">
+        <h1 id="aboutHeadLine" class="abouthead">ABOUT</h1>
+        <div class="aboutBox">
+
+        </div>
+
+      </section>
+      <!------------ work ------------>
+      <section id="work" class="work">
+        <h1 id="workHeadLine" class="workhead">WORK</h1>
+        <!------------ item ------------>
+        <div class="workBox">
+
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/" name="" alt=""></a>
+            <p class="date">2023/00/00</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/" name="" alt=""></a>
+            <p class="date">2023/00/00</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/" name="" alt=""></a>
+            <p class="date">2023/00/00</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/" name="" alt=""></a>
+            <p class="date">2023/00/00</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/" name="" alt=""></a>
+            <p class="date">2023/00/00</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/summer.jpg" name="summer" alt="海"></a>
+            <p class="date">2023/07/28</p>
+            <p class="comment"></p>
+          </div>
+          <div id="itemBox" class="itemBox">
+            <a class="toModal" href=""><img class="pic" src="images/easy.png" name="easy" alt="バイク"></a>
+            <p class="date">2023/07/28</p>
+            <p class="comment"></p>
+          </div>
+
+        </div>
+        
+      </section>
+      
+      <!------------ contact ------------>
+      <section id="contact" class="contact">
+        <h1 id="contactHeadLine" class="contacthead">CONTACT</h1>
+        <div class="contactBox">
+          
+        </div>
+        
+      </section>
+
+    </article>
+    
+    <footer>
+      <p id="copy">&copy;2023 knm's page. All Rights Reserved.</p>
+    </footer>
+
+    <!------------ madal ------------>
+    <div id="modal" class="modal">
+      <!-- <div id="topLayer" class="topLayer"> -->
+        <img id="modalPic" class="modalPic" src="">
+        <p id="close" class="close">CLOSE ANYWHERE</p>
+      <!-- </div> -->
+    </div>
+
+    <!------------ go to top arrow------------>
+    <div>
+      <a class="toTop" href="#">
+        <img src="images/arrowTop.svg" alt="トップ">
+      </a>
+    </div>
+    <p id="scr">px</p>
+    <!------------ dark mode ------------>
+
+
+    <div class="dark">
+      <img src="images/light.svg" alt="ランプ">
+    </div>
+
+      
+  </main>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+  
+</html>

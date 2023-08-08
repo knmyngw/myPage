@@ -1,0 +1,306 @@
+/*---------- pc,sp common ----------*/
+body {
+	font-family:
+	 "monaco", "Meiryo", "HiraginoSans-W3",
+		"Source Sans Pro", "Hiragino Kaku Gothic ProN",
+    Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0px;
+    color: #505050;
+  }
+  
+  
+/* ---------- header ---------- */
+header {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  /* border: 1px solid lightblue; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1001;
+}
+
+
+
+/* ---------- nav ---------- */
+.logoBox, .nav-pc {
+  margin: 10px calc(0px + 3vw);
+  background-color: rgba(250, 250, 250, 0.7);
+  border-radius: 3px;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logoBox > a, .nav-pc > a {
+  margin: 3px calc(0px + 3vw);
+  font-size: 20px;
+  transition: 350ms 50ms;
+  display: block;
+}
+.logoBox > a {
+  font-size: 25px;
+}
+
+.logoBox > a:link, .nav-pc > a:link {
+  text-decoration: none;
+}
+
+.logoBox > a:visited, .nav-pc > a:visited {
+  text-decoration: none;
+}
+
+.logoBox > a:active, .nav-pc > a:active {
+  text-decoration: none;
+}
+
+.logoBox > a:hover, .nav-pc > a:hover {
+  color: #00e0e0;
+  text-decoration: none;
+}
+
+/* ---------- main ---------- */
+
+body, .logoBox, .nav-pc {
+  transition: 500ms ease 100ms;
+}
+
+main {
+  margin: 0;
+  width: 100%;
+}
+
+h1, p , .link {
+  transition: 350ms;
+}
+
+a {
+  color: #505050;
+}
+
+/* ---------- top img ---------- */
+#topImg {
+  width: 100%;
+  margin: 50px auto;
+  opacity: 0;
+}
+
+#carouselSection {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.topPic {
+  width: 100vw;
+  /* height: calc(100vh - 50px); */
+}
+
+/* ---------- head line ---------- */
+
+/* .headbox { */
+  /* width: 1080px; */
+  /* margin: 50px auto 0 auto; */
+/* } */
+.abouthead, .workhead, .contacthead {
+  display: block;
+  font-size: 50px;
+  margin: 50px auto;
+  /* opacity: 0; */
+  width: 75vw;
+  /* color: #505050; */
+}
+
+/* ---------- about ---------- */
+.about {
+  opacity: 0;
+  transition: 1500ms;
+  margin-top: 100px;
+}
+
+.aboutBox {
+  min-height: 100px;
+  width: 75vw;
+  margin: 30px auto;
+  /* border: 1px solid paleturquoise; */
+}
+
+/* ---------- work ---------- */
+.work {
+  opacity: 0;
+  transition: 1500ms;
+  margin-top: 100px;
+}
+
+.workBox {
+  min-height: 100px;
+  width: 75vw;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* border: 1px solid paleturquoise; */
+}
+
+.itemBox {
+  text-align: right;
+  width: 300px;
+  height: 400px;
+  margin: 10px 0;
+  padding: 0;
+  overflow: hidden;
+  /* border: 1px solid paleturquoise; */
+}
+
+.pic {
+  width: 300px;
+  height: 300px;
+  /* border: 1px solid paleturquoise; */
+}
+
+.pic:hover {
+  transition: 150ms;
+  transition-delay: 150ms;
+  scale: 1.05 1.05;
+  /* rotate: .3deg; */
+  /* translate: 0 -1%; */
+  /* transform: rotate3d(1, 1, 0, 15deg); */
+  /* transform: scale3d(1.05,  1.05, 1); */
+}
+
+/* ---------- contact ---------- */
+.contact {
+  opacity: 0;
+  transition: 1500ms;
+  margin-top: 100px;
+}
+
+.contactBox {
+  min-height: 100px;
+  width: 75vw;
+  margin: 30px auto;
+  /* border: 1px solid paleturquoise; */
+  
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  width: 75vw;
+  height: 30px;
+  background-color: #505050;
+  margin: 30px auto 0 auto; 
+  padding: 0;
+  position: relative;
+
+}
+
+#copy {
+  font-size: calc(5px + .5vw);
+  color: #fafafa;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ---------- modal ---------- */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fafafa;
+  z-index: 1100;
+}
+
+.add {
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+
+.modalPic {
+  display: block;
+  width: 70vmin;
+  /* height: auto; */
+}
+
+.close {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  margin: 5px;
+}
+
+
+/* ---------- to top btn ---------- */
+.toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  height: 75px;
+  width: 75px;
+  border-radius: 100px;
+  background-color: #505050;
+  border: 2px solid #fafafa;
+  transition: 350ms ease;
+  opacity: 0;
+}
+
+.toTop img {
+  position: absolute;
+  top: 5px;
+  left: 5px; 
+  width: 65px;
+  height: 65px;
+}
+
+/* ---------- window scroll ----------*/
+#scr {
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+}
+
+/* ---------- dark mode btn ---------- */
+.dark {
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  background-color: #505050;
+  border: 2px solid #fafafa;
+  transition: 300ms ease;
+  opacity: 0;
+}
+
+.dark img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 13px;
+  top: 12px;
+}
+
+.bg {
+  background-color: #1a1f1a;
+}
+
+.boxdk {
+  background-color: rgba(26, 31, 26, 0.7);
+}
+
+.chardk {
+  color: #fafafa;
+}
