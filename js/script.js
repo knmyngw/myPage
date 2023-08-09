@@ -107,7 +107,7 @@ $(function() {
     const windowH = $(window).height();
     const scroll = $(window).scrollTop();
     const term = (windowH >= 500) && (scroll >= (windowH / 3));
-    const spterm = (windowH < 500) && (scroll >= (windowH * 2 / 3));
+    const spterm = (windowH < 500) && (scroll >= (windowH));
 
     // console.log('windowH ' +windowH);
     // console.log('scroll ' +scroll);
