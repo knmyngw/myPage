@@ -39,12 +39,12 @@ header {
 
 .logoBox > a, .nav-pc > a {
   margin: 3px calc(0px + 3vw);
-  font-size: 20px;
+  font-size: calc(10px + 1vw);
   transition: 350ms 50ms;
   display: block;
 }
 .logoBox > a {
-  font-size: 25px;
+  font-size: calc(12px + 1vw);
 }
 
 .logoBox > a:link, .nav-pc > a:link {
@@ -108,7 +108,7 @@ a {
 /* } */
 .abouthead, .workhead, .contacthead {
   display: block;
-  font-size: 50px;
+  font-size: calc(2vw + 30px);
   margin: 50px auto;
   /* opacity: 0; */
   width: 75vw;
@@ -148,8 +148,8 @@ a {
 
 .itemBox {
   text-align: right;
-  width: 300px;
-  height: 400px;
+  width: calc(7vw + 210px);
+  height: calc(7vw + 280px);
   margin: 10px 0;
   padding: 0;
   overflow: hidden;
@@ -157,17 +157,17 @@ a {
 }
 
 .pic {
-  width: 300px;
-  height: 300px;
+  width: calc(7vw + 210px);
+  height: calc(7vw + 210px);
   /* border: 1px solid paleturquoise; */
 }
 
 .pic:hover {
-  transition: 150ms;
+  transition: 300ms;
   transition-delay: 150ms;
   scale: 1.05 1.05;
-  /* rotate: .3deg; */
-  /* translate: 0 -1%; */
+  translate: 0 -1%;
+  /* rotate: .1deg; */
   /* transform: rotate3d(1, 1, 0, 15deg); */
   /* transform: scale3d(1.05,  1.05, 1); */
 }
@@ -190,18 +190,18 @@ a {
 /* ---------- footer ---------- */
 
 footer {
-  width: 75vw;
-  height: 30px;
-  background-color: #505050;
-  margin: 30px auto 0 auto; 
+  width: 100vw;
+  /* height: calc(50px - 1vw); */
+  /* background-color: #505050; */
+  margin-top: 50px; 
   padding: 0;
   position: relative;
 
 }
 
-#copy {
-  font-size: calc(5px + .5vw);
-  color: #fafafa;
+.copy {
+  font-size: calc(5px + 1vw);
+  color: #505050;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -246,7 +246,7 @@ footer {
 .toTop {
   position: fixed;
   right: 20px;
-  bottom: 30px;
+  bottom: 20px;
   height: 75px;
   width: 75px;
   border-radius: 100px;
@@ -267,15 +267,25 @@ footer {
 /* ---------- window scroll ----------*/
 #scr {
   position: fixed;
-  right: 20px;
-  bottom: 0px;
+  right: 100px;
+  bottom: 20px;
+}
+#width {
+  position: fixed;
+  right: 300px;
+  bottom: 20px;
+}
+#height {
+  position: fixed;
+  right: 200px;
+  bottom: 20px;
 }
 
 /* ---------- dark mode btn ---------- */
 .dark {
   position: fixed;
   left: 20px;
-  bottom: 30px;
+  bottom: 20px;
   width: 75px;
   height: 75px;
   border-radius: 100px;

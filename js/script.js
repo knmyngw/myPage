@@ -56,7 +56,7 @@ $(function() {
       dest = $(href);
     };
     //                 トップからの距離
-    const pos = dest.offset().top;
+    const pos = dest.offset().top -50;
     
     //        animate({css},           duration, easing, f())
     $('html, body').animate({'scrollTop': pos}, 700, 'swing', function() {
@@ -97,22 +97,32 @@ $(function() {
       });
     // print scroll px
     $('#scr').text($(this).scrollTop() + 'px');
+    // print window height
+    $('#width').text('w:' + $(window).width() + 'px');
+    $('#height').text('h:' + $(window).height() + 'px');
+    
   });
 // btn show hide
   $(window).on('scroll', function() {
     const windowH = $(window).height();
     const scroll = $(window).scrollTop();
-    const term = (scroll >= (windowH / 3));
-    console.log('windowH ' +windowH);
-    console.log('scroll ' +scroll);
-    console.log('term ' +term);
+    const term = (windowH >= 500) && (scroll >= (windowH / 3));
+    const spterm = (windowH < 500) && (scroll >= (windowH * 2 / 3));
 
-    if (term) {
+    // console.log('windowH ' +windowH);
+    // console.log('scroll ' +scroll);
+    // console.log('term ' +term);
+
+    if (spterm) {
       $('.toTop, .dark').css({
         'opacity': '1',
       });
       
-    } else {
+    } else if (term){
+      $('.toTop, .dark').css({
+        'opacity': '1',
+      });
+    }else {
       $('.toTop, .dark').css({
         'opacity': '0',
       });
@@ -161,7 +171,7 @@ $(function() {
   $('.dark').on('click', function() {
     $('body').toggleClass('bg');
     $('.logoBox, .nav-pc').toggleClass('boxdk');
-    $('p, h1, .link, .logo').toggleClass('chardk');
+    $('p, h1, .link, .logo, .copy').toggleClass('chardk');
   });
 
 
