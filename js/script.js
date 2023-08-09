@@ -36,14 +36,14 @@ $(function() {
 // 前方一致、aタグhref属性文字列先頭"#"がクリックで発火
   $('a[href^="#"]').on('click', function() {
 
-    console.log($(this).attr("href"));
+    // console.log($(this).attr("href"));
     
     // 行き先
     let dest;
     // クリックされたhref属性から"#~~~"を代入
     const href = $(this).attr("href");
     const bottom = (($('html').height()) - ($(window).height()));
-    console.log(bottom);
+    // console.log(bottom);
     //          "#" = ページトップ
     if (href == '#') {
       dest = $('html');
