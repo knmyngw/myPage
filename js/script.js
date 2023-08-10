@@ -132,7 +132,7 @@ $(function() {
 // toTop , dark mode hover
   $('.toTop, .dark').on('mouseover', function() {
     $(this).css({
-      'backgroundColor': '#00e0e0',
+      'backgroundColor': '#00d0f0',
     });
   });
   
@@ -157,6 +157,10 @@ $(function() {
     $('#modal').fadeIn(300);
     $('#modal').css('display', 'flex');
     $('body').css('overflow', 'hidden');
+    const comment = $(this).attr('alt');
+    // console.log(comment);
+    $('.comment').text(comment);
+    $('.toTop, .dark').css('opacity', '0');
     return false;
   });
   // modal off
@@ -171,7 +175,7 @@ $(function() {
   $('.dark').on('click', function() {
     $('body').toggleClass('bg');
     $('.logoBox, .nav-pc').toggleClass('boxdk');
-    $('p, h1, .link, .logo, .copy').toggleClass('chardk');
+    $('p, h1, header a, .copy').toggleClass('chardk');
   });
 
 
