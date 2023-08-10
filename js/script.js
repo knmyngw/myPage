@@ -49,7 +49,7 @@ $(function() {
       dest = $('html');
     // click contact jump buttom
     } else if (href == "#contact") {
-      $('html').animate({'scrollTop': bottom}, 700, 'swing', function(){});
+      $('html').animate({'scrollTop': bottom}, 1000, 'swing', function(){});
       return false;
     } else {
       //           = #~~~
@@ -59,7 +59,7 @@ $(function() {
     const pos = dest.offset().top -50;
     
     //        animate({css},           duration, easing, f())
-    $('html, body').animate({'scrollTop': pos}, 700, 'swing', function() {
+    $('html, body').animate({'scrollTop': pos}, 1000, 'swing', function() {
 
       // console.log('scroll!');
     });
