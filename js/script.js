@@ -96,10 +96,10 @@ $(function() {
         }
       });
     // print scroll px
-    $('#scr').text($(this).scrollTop() + 'px');
+    // $('#scr').text($(this).scrollTop() + 'px');
     // print window height
-    $('#width').text('w:' + $(window).width() + 'px');
-    $('#height').text('h:' + $(window).height() + 'px');
+    // $('#width').text('w:' + $(window).width() + 'px');
+    // $('#height').text('h:' + $(window).height() + 'px');
     
   });
 // btn show hide

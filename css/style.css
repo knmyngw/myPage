@@ -138,8 +138,8 @@ h1, p , .link {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-end;
-  align-content: baseline;
+  /* align-items: flex-end; */
+  /* align-content: baseline; */
   /* border: 1px solid paleturquoise; */
 }
 
@@ -168,9 +168,6 @@ h1, p , .link {
   /* transform: rotate3d(1, 1, 0, 15deg); */
   /* transform: scale3d(1.05,  1.05, 1); */
 }
-/* .comment { */
-  /* display: none; */
-/* } */
 
 /* ---------- contact ---------- */
 .contact {
@@ -204,7 +201,7 @@ footer {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: auto;
+  margin: 0;
 }
 
 /* ---------- modal ---------- */
@@ -214,23 +211,17 @@ footer {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: rgba(26, 31, 26, 0.9);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1100;
 }
 
-.add {
-  overscroll-behavior-y: contain;
-}
-
 .modalPic {
   display: block;
-  /* width: 70vw; */
-  max-width: 75vw;
-  /* height: 70vh; */
-  max-height: 75vh;
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 .close {
@@ -263,7 +254,7 @@ footer {
 }
 
 .toTop img {
-  position: absolute;
+  position: relative;
   top: 5px;
   left: 5px; 
   width: 65px;
@@ -305,19 +296,19 @@ footer {
 }
 
 /* ---------- window scroll ----------*/
-#scr {
-  position: fixed;
-  right: 100px;
-  bottom: 20px;
-}
-#width {
-  position: fixed;
-  right: 300px;
-  bottom: 20px;
-}
-#height {
-  position: fixed;
-  right: 200px;
-  bottom: 20px;
-}
+/* #scr { */
+  /* position: fixed; */
+  /* right: 100px; */
+  /* bottom: 20px; */
+/* } */
+/* #width { */
+  /* position: fixed; */
+  /* right: 300px; */
+  /* bottom: 20px; */
+/* } */
+/* #height { */
+  /* position: fixed; */
+  /* right: 200px; */
+  /* bottom: 20px; */
+/* } */
 
