@@ -33,7 +33,7 @@ header {
 
 /* ---------- nav ---------- */
 .logoBox, .nav-pc {
-  margin: 10px 0 10px calc(3vmax);
+  margin: 10px 0 10px calc(3.5vmax);
   background-color: rgba(240, 240, 240, 0.5);
   border-radius: 3px;
   padding: 0;
@@ -42,7 +42,7 @@ header {
   align-items: center;
 }
 .nav-pc {
-  margin: 10px  calc(3vmax) 10px 0;
+  margin: 10px  calc(3.5vmax) 10px 0;
 
 }
 
