@@ -33,7 +33,7 @@ header {
 
 /* ---------- nav ---------- */
 .logoBox, .nav-pc {
-  margin: 10px calc(0px + 3vw);
+  margin: 10px calc(0px + 2vw);
   background-color: rgba(240, 240, 240, 0.5);
   border-radius: 3px;
   padding: 0;
@@ -43,8 +43,8 @@ header {
 }
 
 .logoBox > a, .nav-pc > a {
-  margin: 3px calc(0px + 3vw);
-  font-size: calc(10px + 1vw);
+  margin: 3px calc(0px + 2vw);
+  font-size: calc(5px + 1vw);
   transition: 350ms 50ms;
   display: block;
 }
@@ -233,6 +233,7 @@ footer {
   top: 0;
   left: 0;
   z-index: 2000;
+  overscroll-behavior-y: contain;
 }
 
 .modalPic {

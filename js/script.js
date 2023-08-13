@@ -110,17 +110,17 @@ $(function() {
     if (hideHeadLine) {
       $(headLine).css({
         'opacity': '0',
-        'top': '55vh',
+        'top': '60vh',
       })
     } else if (showHeadLine) {
       $(headLine).css({
         'opacity': '1',
-        'top': '60vh',
+        'top': '65vh',
       })
     } else {
       $(headLine).css({
         'opacity': '0',
-        'top': '65vh',
+        'top': '70vh',
       })
     }
   });
