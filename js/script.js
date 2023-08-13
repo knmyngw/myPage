@@ -22,16 +22,12 @@ $(window).on('load', function() {
   $('#topImg').animate({'opacity': 1}, 1500, 'swing', function(){
     // console.log('welcome');
   });
-  // print position
-  // $('html').each(function() {
-    // let pos = $(this).offset();
-    // console.log(pos);
-  // });
 });
 
 
 // --------------------
 $(function() {
+
 // inpage link scroll
 // 前方一致、aタグhref属性文字列先頭"#"がクリックで発火
   $('a[href^="#"]').on('click', function() {
@@ -56,7 +52,7 @@ $(function() {
       dest = $(href);
     };
     //                 トップからの距離
-    const pos = dest.offset().top -50;
+    const pos = dest.offset().top -150;
     
     //        animate({css},           duration, easing, f())
     $('html, body').animate({'scrollTop': pos}, 1000, 'swing', function() {
@@ -69,41 +65,68 @@ $(function() {
 // scroll
   $(window).on('scroll', function() {
     
-// section fadein
-    $('.link').each(function() {
-      // console.log(index);
-      // console.log(element);
-      // $('.link').each(function(href) {
-        // console.log('href= ' +href);
-        // });
-        // console.log(this);
-        const headhref = $(this).attr('href');
-        const coor = $(headhref).offset().top;
-        const windowH = $(window).height();
-        const point = coor - windowH * 3 / 4;
-        // console.log('headhref:' + headhref);
-        // console.log('coor:' + coor);
-        // console.log('windowH:' + windowH);
-        // console.log('point: ' + point);
-        if ($(window).scrollTop() > point) {
-          $(headhref).css({
-            'opacity': '1',
-          });
-        } else {
-          $(headhref).css({
-            'opacity': '0',
-          });
-        }
-      });
-    // print scroll px
-    // $('#scr').text($(this).scrollTop() + 'px');
-    // print window height
-    // $('#width').text('w:' + $(window).width() + 'px');
-    // $('#height').text('h:' + $(window).height() + 'px');
-    
+// box slide & fadein
+  $('.Box').each(function() {
+    const pos = $(this).offset().top;
+    const boxH = $(this).height();
+    const windowH = $(window).height();
+    const scroll = $(window).scrollTop();
+    const printBox = (pos - windowH * 2 / 3) <= scroll;
+    const goLeftBox =(pos + boxH - windowH * 1 / 3) <= scroll;
+    if (goLeftBox) {
+      $(this).css({
+        'opacity': 0,
+        'position': 'relative',
+        'left': -500,
+      })
+    } else if (printBox) {
+      $(this).css({
+        'opacity': 1,
+        'position': 'relative',
+        'left': 0,
+      })
+    } else {
+      $(this).css({
+        'opacity': 0,
+        'position': 'relative',
+        'left': 500,
+      })
+    }
   });
+  
+  // head line show hide
+  $('section').each(function() {
+    const pos = $(this).offset().top;
+    const scroll = $(window).scrollTop();
+    const sectionH = $(this).height();
+    const windowH = $(window).height();
+    const showHeadLine = (scroll >= pos - windowH * .6);
+    const hideHeadLine = (scroll > pos + sectionH - windowH * .6);
+    const headLine = ($(this).children('h1'));
+    // console.log($(this).attr('class') + ' show ' + showHeadLine);
+    // console.log($(this).attr('class') + ' hide ' + hideHeadLine);
+    // console.log($(this).children('h1').text());
+
+    if (hideHeadLine) {
+      $(headLine).css({
+        'opacity': '0',
+        'top': '55vh',
+      })
+    } else if (showHeadLine) {
+      $(headLine).css({
+        'opacity': '1',
+        'top': '60vh',
+      })
+    } else {
+      $(headLine).css({
+        'opacity': '0',
+        'top': '65vh',
+      })
+    }
+  });
+    
 // btn show hide
-  $(window).on('scroll', function() {
+  // $(window).on('scroll', function() {
     const windowH = $(window).height();
     const scroll = $(window).scrollTop();
     const term = (windowH >= 500) && (scroll >= (windowH / 3));
@@ -128,6 +151,8 @@ $(function() {
       });
     };
   });
+// ---------- scroll event end ----------
+
 
 // toTop , dark mode hover
   $('.toTop, .dark').on('mouseover', function() {
@@ -141,17 +166,9 @@ $(function() {
       'backgroundColor': '#505050',
     });
   });
-
-// modal on
+  
+// modal open
   $('.pic').on('click', function() {
-    // console.log($(this).attr('class'));
-    // console.log($(this).attr('src'));
-    // console.log($(this).attr('name'));
-    // console.log($(this).attr('alt'));
-    // console.log($(this).prop('class'));
-    // console.log($(this).prop('src'));
-    // console.log($(this).prop('name'));
-    // console.log($(this).prop('alt'));
     const gallery = $(this).attr('src');
     $('#modalPic').attr('src', gallery);
     $('#modal').fadeIn(300);
@@ -163,13 +180,11 @@ $(function() {
     $('.toTop, .dark').css('opacity', '0');
     return false;
   });
-  // modal off
+  // modal close
   $('#modal').on('click', function() {
     $(this).fadeOut(300);
     $('body').css('overflow', 'visible');
   });
-  
-  
   
 // darkmode
   $('.dark').on('click', function() {
@@ -178,6 +193,10 @@ $(function() {
     $('p, h1, header a, .copy').toggleClass('chardk');
   });
 
+// print px
+  // $('#scr').text($(window).scrollTop());
+  // $('#width').text('width ' + $(window).width());
+  // $('#height').text('height ' + $(window).height());
 
 
 });
