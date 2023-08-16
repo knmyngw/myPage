@@ -38,6 +38,7 @@ header {
   margin: 0;
   /* border: 1px solid lightblue; */
   position: fixed;
+  transition: 350ms;
   top: 0;
   left: 0;
   display: flex;
@@ -102,9 +103,6 @@ main {
 
 }
 
-p , .link {
-  transition: 350ms;
-}
 
 /* ---------- head line ---------- */
 
@@ -133,7 +131,7 @@ p , .link {
 .inBox {
   height: 90vh;
   width: 90vw;
-  margin: 5vh 5vw;
+  margin: 3vh 5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -176,7 +174,7 @@ section {
   text-align: right;
   width: calc(25vmax);
   height: calc(25vmax);
-  margin: 10px 10px;
+  margin: 35px 10px 0 10px;
   padding: 0;
   overflow: hidden;
   /* border: 1px solid paleturquoise; */
@@ -242,6 +240,7 @@ footer {
   width: 100vw;
   height: 100vh;
   background-color: rgba(26, 31, 26, 0.9);
+  color: #f0f0f0;
   position: fixed;
   top: 0;
   left: 0;
@@ -265,6 +264,13 @@ footer {
 .comment {
   position: fixed;
   bottom: 0px;
+  right: 0px;
+  margin: 10px;
+  color: #f0f0f0;
+}
+.modaldate {
+  position: fixed;
+  top: 0px;
   right: 0px;
   margin: 10px;
   color: #f0f0f0;
