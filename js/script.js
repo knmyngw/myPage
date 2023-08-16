@@ -73,10 +73,10 @@ $(function() {
       const windowH = $(window).height();
       const windowW = $(window).width();
       const scroll = $(window).scrollTop();
-      const printBox = scroll >= (pos - windowH * .7);
-      const goLeftBox = scroll >= (pos + boxH - windowH * .7);
-      const spprint = scroll >= (pos + 100 - windowH * .25);
-      const spgoLeft = scroll >= (pos + 100 + boxH - windowH * .25);
+      const printBox = scroll >= (pos - windowH * .5);
+      const goLeftBox = scroll >= (pos + boxH - windowH * .5);
+      const spprint = scroll >= (pos - windowH * .25);
+      const spgoLeft = scroll >= (pos + boxH - windowH * .25);
       console.log(printBox)
       console.log(goLeftBox)
       console.log(windowW)
@@ -130,10 +130,10 @@ $(function() {
       const sectionH = $(this).height();
       const windowH = $(window).height();
       const windowW = $(window).width();
-      const showHeadLine = (scroll >= pos - windowH * .7);
-      const hideHeadLine = (scroll >= pos + sectionH - windowH * .7);
-      const spshowHeadLine = (scroll >= pos + 100 - windowH * .25);
-      const sphideHeadLine = (scroll >= pos + 100 + sectionH - windowH * .25);
+      const showHeadLine = (scroll >= pos - windowH * .5);
+      const hideHeadLine = (scroll >= pos + sectionH - windowH * .5);
+      const spshowHeadLine = (scroll >= pos  - windowH * .25);
+      const sphideHeadLine = (scroll >= pos  + sectionH - windowH * .25);
       const headLine = ($(this).children('h1'));
       // console.log($(this).attr('class') + ' show ' + showHeadLine);
       // console.log($(this).attr('class') + ' hide ' + hideHeadLine);
@@ -202,7 +202,13 @@ $(function() {
         'opacity': '0',
       });
     };
+    
+    // print px
+    // $('#scr').text($(window).scrollTop());
+    // $('#width').text('width ' + $(window).width());
+    // $('#height').text('height ' + $(window).height());
   });
+
 // ---------- scroll event end ----------
 
 
@@ -246,10 +252,6 @@ $(function() {
     $('p, h1, header a, .copy').toggleClass('chardk');
   });
 
-// print px
-  $('#scr').text($(window).scrollTop());
-  $('#width').text('width ' + $(window).width());
-  $('#height').text('height ' + $(window).height());
 
 
 });
