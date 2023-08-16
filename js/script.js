@@ -38,13 +38,14 @@ $(function() {
     let dest;
     // クリックされたhref属性から"#~~~"を代入
     const href = $(this).attr("href");
+    // 底付きさせない
     const bottom = (($('html').height()) - ($(window).height()));
     // console.log(bottom);
     //          "#" = ページトップ
     if (href == '#') {
       dest = $('html');
-    // click contact jump buttom
     } else if (href == "#contact") {
+      // click contact jump buttom
       $('html').animate({'scrollTop': bottom}, 1000, 'swing', function(){});
       return false;
     } else {
@@ -52,7 +53,7 @@ $(function() {
       dest = $(href);
     };
     //                 トップからの距離
-    const pos = dest.offset().top -150;
+    const pos = dest.offset().top ;
     
     //        animate({css},           duration, easing, f())
     $('html, body').animate({'scrollTop': pos}, 1000, 'swing', function() {
@@ -65,65 +66,116 @@ $(function() {
 // scroll
   $(window).on('scroll', function() {
     
-// box slide & fadein
-  $('.Box').each(function() {
-    const pos = $(this).offset().top;
-    const boxH = $(this).height();
-    const windowH = $(window).height();
-    const scroll = $(window).scrollTop();
-    const printBox = (pos - windowH * 2 / 3) <= scroll;
-    const goLeftBox =(pos + boxH - windowH * 1 / 3) <= scroll;
-    if (goLeftBox) {
-      $(this).css({
-        'opacity': 0,
-        'position': 'relative',
-        'left': -500,
-      })
-    } else if (printBox) {
-      $(this).css({
-        'opacity': 1,
-        'position': 'relative',
-        'left': 0,
-      })
-    } else {
-      $(this).css({
-        'opacity': 0,
-        'position': 'relative',
-        'left': 500,
-      })
-    }
-  });
+// inBox slide & fadein
+    $('.Box').each(function() {
+      const pos = $(this).offset().top;
+      const boxH = $(this).height();
+      const windowH = $(window).height();
+      const windowW = $(window).width();
+      const scroll = $(window).scrollTop();
+      const printBox = scroll >= (pos - windowH * .7);
+      const goLeftBox = scroll >= (pos + boxH - windowH * .7);
+      const spprint = scroll >= (pos - windowH * .35);
+      const spgoLeft = scroll >= (pos + boxH - windowH * .35);
+      console.log(printBox)
+      console.log(goLeftBox)
+      console.log(windowW)
+      if (windowW >= 500) {
+        if (goLeftBox) {
+          $(this).children('.inBox').css({
+            'opacity': '0',
+            'left': '-100%',
+            'z-index': '1100'
+          })
+        } else if (printBox) {
+          $(this).children('.inBox').css({
+            'opacity': '1',
+            'left': '0',
+            'z-index': '1200'
+          })
+        } else {
+          $(this).children('.inBox').css({
+            'opacity': '0',
+            'left': '100%',
+            'z-index': '1100'
+          })
+        }
+      } else {
+        if (spgoLeft) {
+          $(this).children('.inBox').css({
+            'opacity': '0',
+            'left': '-100%',
+            'z-index': '1100'
+          })
+        } else if (spprint) {
+          $(this).children('.inBox').css({
+            'opacity': '1',
+            'left': '0',
+            'z-index': '1200'
+          })
+        } else {
+          $(this).children('.inBox').css({
+            'opacity': '0',
+            'left': '100%',
+            'z-index': '1100'
+          })
+        }
+      }
+    });
   
   // head line show hide
-  $('section').each(function() {
-    const pos = $(this).offset().top;
-    const scroll = $(window).scrollTop();
-    const sectionH = $(this).height();
-    const windowH = $(window).height();
-    const showHeadLine = (scroll >= pos - windowH * .6);
-    const hideHeadLine = (scroll > pos + sectionH - windowH * .6);
-    const headLine = ($(this).children('h1'));
-    // console.log($(this).attr('class') + ' show ' + showHeadLine);
-    // console.log($(this).attr('class') + ' hide ' + hideHeadLine);
-    // console.log($(this).children('h1').text());
+    $('section').each(function() {
+      const pos = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const sectionH = $(this).height();
+      const windowH = $(window).height();
+      const windowW = $(window).width();
+      const showHeadLine = (scroll >= pos - windowH * .7);
+      const hideHeadLine = (scroll >= pos + sectionH - windowH * .7);
+      const spshowHeadLine = (scroll >= pos - windowH * .35);
+      const sphideHeadLine = (scroll >= pos + sectionH - windowH * .35);
+      const headLine = ($(this).children('h1'));
+      // console.log($(this).attr('class') + ' show ' + showHeadLine);
+      // console.log($(this).attr('class') + ' hide ' + hideHeadLine);
+      // console.log($(this).children('h1').text());
 
-    if (hideHeadLine) {
-      $(headLine).css({
-        'opacity': '0',
-        'top': '60vh',
-      })
-    } else if (showHeadLine) {
-      $(headLine).css({
-        'opacity': '1',
-        'top': '65vh',
-      })
-    } else {
-      $(headLine).css({
-        'opacity': '0',
-        'top': '70vh',
-      })
-    }
-  });
+      if (windowW >= 500) {
+        if (hideHeadLine) {
+          $(headLine).css({
+            'opacity': '0',
+            'top': '60vh',
+          })
+        } else if (showHeadLine) {
+          $(headLine).css({
+            'opacity': '1',
+            'top': '65vh',
+          })
+        } else {
+          $(headLine).css({
+            'opacity': '0',
+            'top': '70vh',
+          })
+        }
+
+      } else {
+        if (sphideHeadLine) {
+          $(headLine).css({
+            'opacity': '0',
+            'top': '60vh',
+          })
+        } else if (spshowHeadLine) {
+          $(headLine).css({
+            'opacity': '1',
+            'top': '65vh',
+          })
+        } else {
+          $(headLine).css({
+            'opacity': '0',
+            'top': '70vh',
+          })
+        }
+      }
+    });
     
 // btn show hide
   // $(window).on('scroll', function() {
@@ -154,23 +206,10 @@ $(function() {
 // ---------- scroll event end ----------
 
 
-// toTop , dark mode hover
-  $('.toTop, .dark').on('mouseover', function() {
-    $(this).css({
-      'backgroundColor': '#00d0f0',
-    });
-  });
-  
-  $('.toTop, .dark').on('mouseout', function() {
-    $(this).css({
-      'backgroundColor': '#505050',
-    });
-  });
-  
 // modal open
   $('.pic').on('click', function() {
-    const gallery = $(this).attr('src');
-    $('#modalPic').attr('src', gallery);
+    const file = $(this).attr('src');
+    $('#modalPic').attr('src', file);
     $('#modal').fadeIn(300);
     $('#modal').css('display', 'flex');
     $('body').css('overflow', 'hidden');
@@ -185,7 +224,20 @@ $(function() {
     $(this).fadeOut(300);
     $('body').css('overflow', 'visible');
   });
+
+  // toTop , dark mode hover
+  $('.toTop, .dark').on('mouseover', function() {
+    $(this).css({
+      'backgroundColor': '#00d0f0',
+    });
+  });
   
+  $('.toTop, .dark').on('mouseout', function() {
+    $(this).css({
+      'backgroundColor': '#505050',
+    });
+  });
+    
 // darkmode
   $('.dark').on('click', function() {
     $('body').toggleClass('bg');
