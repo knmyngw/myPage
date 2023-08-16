@@ -77,9 +77,9 @@ $(function() {
       const goLeftBox = scroll >= (pos + boxH - windowH * .5);
       const spprint = scroll >= (pos - windowH * .15);
       const spgoLeft = scroll >= (pos + boxH - windowH * .15);
-      console.log(printBox)
-      console.log(goLeftBox)
-      console.log(windowW)
+      // console.log(printBox)
+      // console.log(goLeftBox)
+      // console.log(windowW)
       if (windowW >= 500) {
         if (goLeftBox) {
           $(this).children('.inBox').css({
