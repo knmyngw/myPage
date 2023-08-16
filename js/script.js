@@ -75,8 +75,8 @@ $(function() {
       const scroll = $(window).scrollTop();
       const printBox = scroll >= (pos - windowH * .7);
       const goLeftBox = scroll >= (pos + boxH - windowH * .7);
-      const spprint = scroll >= (pos - windowH * .35);
-      const spgoLeft = scroll >= (pos + boxH - windowH * .35);
+      const spprint = scroll >= (pos * 1.05 - windowH * .35);
+      const spgoLeft = scroll >= (pos * 1.05 + boxH - windowH * .35);
       console.log(printBox)
       console.log(goLeftBox)
       console.log(windowW)
@@ -132,8 +132,8 @@ $(function() {
       const windowW = $(window).width();
       const showHeadLine = (scroll >= pos - windowH * .7);
       const hideHeadLine = (scroll >= pos + sectionH - windowH * .7);
-      const spshowHeadLine = (scroll >= pos - windowH * .35);
-      const sphideHeadLine = (scroll >= pos + sectionH - windowH * .35);
+      const spshowHeadLine = (scroll >= pos * 1.05 - windowH * .35);
+      const sphideHeadLine = (scroll >= pos * 1.05 + sectionH - windowH * .35);
       const headLine = ($(this).children('h1'));
       // console.log($(this).attr('class') + ' show ' + showHeadLine);
       // console.log($(this).attr('class') + ' hide ' + hideHeadLine);
