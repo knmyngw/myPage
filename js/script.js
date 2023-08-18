@@ -33,7 +33,7 @@ $(function() {
   $('a[href^="#"]').on('click', function() {
 
     // console.log($(this).attr("href"));
-    
+
     // 行き先
     let dest;
     // クリックされたhref属性から"#~~~"を代入
@@ -54,7 +54,7 @@ $(function() {
     };
     //                 トップからの距離
     const pos = dest.offset().top ;
-    
+
     //        animate({css},           duration, easing, f())
     $('html, body').animate({'scrollTop': pos}, 1000, 'swing', function() {
 
@@ -65,9 +65,9 @@ $(function() {
 
 // scroll
   $(window).on('scroll', function() {
-    
+
 // inBox slide & fadein
-    $('.Box').each(function() {
+    $('.box').each(function() {
       const pos = $(this).offset().top;
       const boxH = $(this).height();
       const windowH = $(window).height();
@@ -84,7 +84,7 @@ $(function() {
         if (goLeftBox) {
           $(this).children('.inBox').css({
             'opacity': '0',
-            'left': '-100%',
+            'left': '-3%',
             'z-index': '1100'
           })
         } else if (printBox) {
@@ -96,7 +96,7 @@ $(function() {
         } else {
           $(this).children('.inBox').css({
             'opacity': '0',
-            'left': '100%',
+            'left': '3%',
             'z-index': '1100'
           })
         }
@@ -104,7 +104,7 @@ $(function() {
         if (spgoLeft) {
           $(this).children('.inBox').css({
             'opacity': '0',
-            'left': '-100%',
+            'left': '-3%',
             'z-index': '1100'
           })
         } else if (spprint) {
@@ -116,13 +116,13 @@ $(function() {
         } else {
           $(this).children('.inBox').css({
             'opacity': '0',
-            'left': '100%',
+            'left': '3%',
             'z-index': '1100'
           })
         }
       }
     });
-  
+
   // head line show hide
     $('section').each(function() {
       const pos = $(this).offset().top;
@@ -176,7 +176,7 @@ $(function() {
         }
       }
     });
-    
+
 // btn show hide
   // $(window).on('scroll', function() {
     const windowH = $(window).height();
@@ -192,7 +192,7 @@ $(function() {
       $('.toTop, .dark').css({
         'opacity': '1',
       });
-      
+
     } else if (term){
       $('.toTop, .dark').css({
         'opacity': '1',
@@ -202,7 +202,7 @@ $(function() {
         'opacity': '0',
       });
     };
-    
+
     // print px
     // $('#scr').text($(window).scrollTop());
     // $('#width').text('width ' + $(window).width());
@@ -238,13 +238,13 @@ $(function() {
       'backgroundColor': '#00d0f0',
     });
   });
-  
+
   $('.toTop, .dark').on('mouseout', function() {
     $(this).css({
       'backgroundColor': '#505050',
     });
   });
-    
+
 // darkmode
   $('.dark').on('click', function() {
     $('body').toggleClass('bg');
