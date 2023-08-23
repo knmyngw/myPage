@@ -1,3 +1,4 @@
+{
 // slick
 $(window).ready(function() {
   $('#carouselSection').slick({
@@ -19,11 +20,10 @@ $(window).ready(function() {
 // load されたら
 $(window).on('load', function() {
 
-  $('#topImg').animate({'opacity': 1}, 1500, 'swing', function(){
+  $('body').animate({'opacity': 1}, 1000, 'swing', function(){
     // console.log('welcome');
   });
 });
-
 
 // --------------------
 $(function() {
@@ -233,13 +233,13 @@ $(function() {
   });
 
   // toTop , dark mode hover
-  $('.toTop, .dark').on('mouseover', function() {
+  $('.toTop, .dark').on('mouseenter', function() {
     $(this).css({
       'backgroundColor': '#00d0f0',
     });
   });
 
-  $('.toTop, .dark').on('mouseout', function() {
+  $('.toTop, .dark').on('mouseleave', function() {
     $(this).css({
       'backgroundColor': '#505050',
     });
@@ -255,3 +255,4 @@ $(function() {
 
 
 });
+}
