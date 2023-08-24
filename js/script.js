@@ -207,7 +207,9 @@ $(function() {
     // $('#scr').text($(window).scrollTop());
     // $('#width').text('width ' + $(window).width());
     // $('#height').text('height ' + $(window).height());
-  });
+  },
+  //  { passive: true }
+  );
 
 // ---------- scroll event end ----------
 
@@ -220,10 +222,10 @@ $(function() {
     $('#modal').css('display', 'flex');
     $('body').css('overflow', 'hidden');
     const comment = $(this).attr('alt');
-    // console.log(comment);
     $('.comment').text(comment);
+    // console.log(comment);
+    $('.modaldate').text($(this).attr('data-date'));
     $('.toTop, .dark').css('opacity', '0');
-    $('.modaldate').text($(this).attr('name'));
     return false;
   });
   // modal close
